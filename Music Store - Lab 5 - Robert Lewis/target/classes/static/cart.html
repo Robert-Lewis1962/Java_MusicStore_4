@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Franklin Music - Your Cart</title>
+    <link href="styles/main.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="cart.js"></script>
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <div id="vuediv">
+    <table>
+        <tr>
+            <th style="width:200px">Description</th>
+            <th style="width:50px">Price</th>
+            <th>Qty</th>
+            <th></th>
+        </tr>
+
+        <tr v-for="cartEntry in entries" :productCode="cartEntry.product.code">
+            <td>{{cartEntry.product.description}}</td>
+            <td align="right">${{cartEntry.product.price.toFixed(2)}}</td>
+            <td><input type="text" size="3" class="qty-input" :value="cartEntry.qty"></input></td>
+            <td>
+               <form class="update-qty-form">
+                   <input type="submit" value="Update"></input>
+               </form>
+            </td>
+        </tr>
+        
+        <tr class="no-border">
+            <td>Total:</td>
+            <td>${{totalPrice.toFixed(2)}}</td>
+            <td colspan="2"></td>
+        </tr>
+
+        <tr class="no-border">
+            <td align="right" colspan="3">
+                <form action="searchResults">
+                    <input type="submit" value="Continue Shopping"></input>
+                </form>
+            </td>
+            <td><form><input type="submit" value="Checkout"></input></form></td>
+        </tr>
+    </table>
+    </div>
+</body>
+</html>

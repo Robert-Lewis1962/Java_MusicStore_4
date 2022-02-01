@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section {
+    width: 450px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    background: white;
+    border: 2px solid navy;
+}
+
+h1 {
+    color: navy;
+}
+
+label {
+    width: 6em;
+    padding-right: 1em;
+    float: left;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+th, td {
+	padding: 5px;
+	text-align: left;
+}
+
+input[type="text"] {  /* An attribute selector */
+    float: left;
+    margin-bottom: .5em;
+}
+
+input[type="submit"] {  /* An attribute selector */
+    float: left;
+    margin-bottom: .5em;
+    margin-top: .5em;
+}
+
+br {
+    clear: left;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    margin-bottom: .5em;
+}
